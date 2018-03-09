@@ -13,8 +13,7 @@ public class ShelfApple implements Shelf
 {
 
     private static final int SIZE = 100000;
-    //то есть мы можем максимально поместить 100000 объектов(яблок) в массив.
-    //ок, это наш массив с яблоками
+
     private static Apple[] appleArray =  new Apple[SIZE];
     public int sizeAShelf;
 
@@ -25,11 +24,7 @@ public class ShelfApple implements Shelf
 
     }
 
-    // Не могу понять до конца AbstractPosition класс, для чего он абстрактный, то бишь чтобы можно было его
-    // использовать для объектов с разными параметрами / разных объектов?
-    //
 
-    // Мы здесь в качестве аргумента используем объект класса AbstractPosition ??
     public boolean put(AbstractPosition position)
     {
         sizeAShelf ++;
