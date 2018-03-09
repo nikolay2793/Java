@@ -16,7 +16,7 @@ public class ShelfApple implements Shelf
     //то есть мы можем максимально поместить 100000 объектов(яблок) в массив.
     //ок, это наш массив с яблоками
     private static Apple[] appleArray =  new Apple[SIZE];
-    private int sizeAShelf;
+    public int sizeAShelf;
 
 
     public ShelfApple(int sizeAShelf, Apple[] applRay)

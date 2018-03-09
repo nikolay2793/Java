@@ -5,6 +5,7 @@ import com.shop.bag.Bag;
 import com.shop.bag.BagImpl;
 import com.shop.manager.ShopManager;
 
+import com.shop.position.Position;
 
 import com.shop.shelf.Shelf;
 import com.shop.shelf.ShelfApple;
@@ -20,9 +21,19 @@ import java.util.Arrays;
  */
 public class Main {
 
+
+    private static  Apple aprrr = new Apple(11.977,"ratatui");
+    private static  Shelf shelf1 = new ShelfApple(5, new Apple[5] );
+
+
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Bag bag;
+
+        for(int i = 1; i < 5; i++)
+        {shelf1.put(aprrr);}
 
         System.out.println("S chem poidem vasia?");
         System.out.println("1: ATB power");
@@ -56,45 +67,8 @@ public class Main {
     }
 
 
-
-//    private static void doPokupki(Bag bag)
-//    {
-//        Scanner scanner = new Scanner(System.in);
-//        while(bag.getNotUsedSize() != 0){
-//            System.out.println("1:Pen");
-//            System.out.println("2:Apple");
-//            System.out.println("3:dumay");
-//            switch (scanner.nextInt()){
-//                //    case 1: bag.add(new Pen(10,"karandashik"));break;
-//                //    case 2: bag.add(new Apple(25, "Iabloc")); break;
-//
-//                case 1:
-//
-//                case 3: return;
-//                default:
-//                    System.out.println("dich. ti vtiraech mne dich");
-//            }
-//        }
-//        System.out.println("Galia, I te sho grushick");
-//    }
-
-
-
-    //*** Здесь пробую модифицировать doPokupki с полкой, вроде бы выполняется.
-    // В тоже время совсем не уверен что так правильно.
-
-    //Над вторым пунктом задания, пока еще еще думаю как его решить..
-    //"Если покупаешь три товара, платишь только за первые два...."
-
-
     private static void doPokupki(Bag bag)
     {
-        Apple aprrr = new Apple(2.977,"ratatui");
-        Shelf shelf1 = new ShelfApple(6, new Apple[6] );
-
-
-        for(int i = 1; i < 6; i++)
-        {shelf1.put(aprrr);}
 
         Scanner scanner = new Scanner(System.in);
 
@@ -107,14 +81,14 @@ public class Main {
 
 
                     case 2:
-                        if( shelf1.checkAvailable())
+                        if(shelf1.checkAvailable())
                         {
-                       // bag.add(new Apple(25, "Iabloc"));
-                        bag.add(aprrr);
-                        shelf1.get();
+                         bag.add( shelf1.get());
                         }
                         else
+
                         System.out.println("No more Apples for YOU !!!!");
+
                         break;
 
 
