@@ -23,7 +23,7 @@ public class Main {
 
 
     private static  Apple aprrr = new Apple(11.977,"ratatui");
-    private static  Shelf shelf1 = new ShelfApple(5, new Apple[5] );
+    private static  Shelf shelf1 = new ShelfApple(6, new Apple[6] );
 
 
 
@@ -32,7 +32,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Bag bag;
 
-        for(int i = 1; i < 5; i++)
+        for(int i = 1; i < 6; i++)
         {shelf1.put(aprrr);}
 
         System.out.println("S chem poidem vasia?");
