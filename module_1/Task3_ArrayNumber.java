@@ -1,71 +1,51 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Arrays;
+import  java.util.List;
 
 public class Task3_ArrayNumber {
 
     public static int[] array = new int[16];
 
-    public static int[] secondArray = new int[array.length];
-
-    public static int number = 0;
-
-    public static int digit;
-
-
-    private static boolean ok = false;
 
 
     public static void main(String[] args) {
 
         Random rand = new Random();
+   //     ArrayList list = new ArrayList(Arrays.asList(array));
+        ArrayList list = new ArrayList();
 
         for (int i = 0; i < array.length; i++) {
 
             int z = rand.nextInt(9) + 1;
             array[i] = z;
             System.out.print(array[i] + ", ");
+
+            list.add(array[i]);
+            list.set(i,array[i]);
         }
-
-        compare();
-
-        digit = array[0];
-
-        for (int i = 0; i < array.length; i++) {
-            check();
-            compare();
-        }
-
-        System.out.println("\n");
-        System.out.println("number is :" + number);
+        System.out.print(list);
+        remove(list);
+        System.out.print(list);
     }
 
-    public static void check() {
+    private static void remove(List<?> list)
+    {
+        int count = list.size();
 
-        for (int j = 0; j < array.length; j++) {
-
-            digit = array[j];
-            secondArray[j] = digit;
-
-//            System.out.print("digit" + digit + ", ");
-//            System.out.print("secondArray" + secondArray[j] + ", ");
-
-            if (ok) {
-                number++;
-            }
-        }
-    }
-
-    public static void compare() {
-
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i+1; j < array.length; j++) {
-                if (array[i] != secondArray[j])
+        for (int i = 0; i < count; i++)
+        {
+            for (int j = i + 1; j < count; j++)
+            {
+                if (list.get(i).equals(list.get(j)))
                 {
-                    ok = true;
-
+                    list.remove(j--);
+                    count--;
                 }
             }
-            System.out.println("secondArray" + secondArray[i]);
         }
     }
+
+
+
 }
