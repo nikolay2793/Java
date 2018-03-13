@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Task4_popularPasswords {
 
-    private static Map<String, String> words_count = new HashMap<String, String>();
+    private static Map<String, String> logins_passwords = new HashMap<String, String>();
     private static Map<String, Integer> top_passwords = new HashMap<String, Integer>();
     private static String[] passwArray;
     private static int z = 1;
@@ -34,15 +34,15 @@ public class Task4_popularPasswords {
         read("C:\\Java\\Pssw.txt");
         //   System.out.println("words_count: " + words_count);
         System.out.println("\n");
-        System.out.println("logins: " + words_count.keySet());
-        System.out.println("passwords: " + words_count.values());
+        System.out.println("logins: " + logins_passwords.keySet());
+        System.out.println("passwords: " + logins_passwords.values());
 
         int c = 0;
-        passwArray = new String[words_count.size()];
-        for (String string : words_count.keySet())
+        passwArray = new String[logins_passwords.size()];
+        for (String string : logins_passwords.keySet())
         //for(int i = 0; i < words_count.size(); i++)
         {
-            String value = words_count.get(string);
+            String value = logins_passwords.get(string);
             passwArray[c] = value;
             //System.out.println("array: " + passw[counter]);
             c++;
@@ -63,21 +63,21 @@ public class Task4_popularPasswords {
 
         for (int i = 0; i < words.length; i++) {
 
-            words_count.put(words[i], words[++i]);
+            logins_passwords.put(words[i], words[++i]);
             //    System.out.println("words_count: " + words_count);
         }
     }
 
     private static void checkForMatches() {
 
-        String[] passw = new String[words_count.size()];
+        String[] passw = new String[logins_passwords.size()];
         int counter = 0;
         String currentPassword;
 
-        for (String s : words_count.keySet())
+        for (String s : logins_passwords.keySet())
         //for(int i = 0; i < words_count.size(); i++)
         {
-            String value = words_count.get(s);
+            String value = logins_passwords.get(s);
             //System.out.println("v: " + value);
             currentPassword = value;
             passw[counter] = value;
@@ -105,7 +105,7 @@ public class Task4_popularPasswords {
         boolean unique = true;
         int counter = 0;
 
-        for (int i = z; i < words_count.size(); i++) {
+        for (int i = z; i < logins_passwords.size(); i++) {
 //            System.out.println("!" + i + " " + z);
 //            System.out.println("I'm here" + pssw + " " + passwArray[i]);
             if (pssw.equals(passwArray[i])) {
