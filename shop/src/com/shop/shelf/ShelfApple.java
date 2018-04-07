@@ -24,13 +24,14 @@ public class ShelfApple implements Shelf
 
     }
 
-
+//тип переменной -- AbstractPosition
     public boolean put(AbstractPosition position)
     {
-        sizeAShelf ++;
+
 
         //*** Не могу понять справа от знака =, и для чего Apple в скобках.
         appleArray[sizeAShelf] = (Apple) position;
+        sizeAShelf ++;
         return true;
     }
 
